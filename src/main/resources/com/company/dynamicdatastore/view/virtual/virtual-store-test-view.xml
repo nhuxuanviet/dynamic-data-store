@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:layout="http://jmix.io/schema/flowui/layout"
+      title="Virtual Store Test">
+    <data>
+        <keyValueCollection id="entitiesDc"/>
+        <keyValueCollection id="aggregateDc"/>
+    </data>
+<layout>
+    <vbox width="100%" padding="true" spacing="true">
+        <hbox spacing="true" width="100%">
+            <vbox width="30%">
+                <formLayout>
+                    <textField id="storeNameField" label="Store name"/>
+                    <textField id="entityNameField" label="Entity name"/>
+                    <textArea id="jsonDataField" label="Entity JSON" height="150px"/>
+                    <textField id="entitiesListField" label="Aggregate entities (comma separated)"/>
+                    <textField id="joinKeyField" label="Join key (common field)"/>
+                    <textArea id="selectJsonField" label="Select mapping JSON (alias -> Entity.field)" height="120px"/>
+                    <textArea id="filtersJsonField" label="Filters JSON (Entity.field -> value)" height="120px"/>
+                </formLayout>
+                <hbox spacing="true">
+                    <button id="createStoreBtn" text="Create Store"/>
+                    <button id="registerDefBtn" text="Register Definition"/>
+                    <button id="createEntityBtn" text="Create Entity" themeNames="primary"/>
+                    <button id="loadAllBtn" text="Load All"/>
+                    <button id="aggregateBtn" text="Aggregate" themeNames="success"/>
+                    <button id="showConfigBtn" text="Show Fields/Filters"/>
+                    <button id="applyConfigBtn" text="Apply Selection" themeNames="primary"/>
+                </hbox>
+            </vbox>
+
+            <vbox width="70%">
+                <dataGrid id="entitiesGrid" dataContainer="entitiesDc" width="100%" height="250px"/>
+                <label text="Aggregate Result"/>
+                <dataGrid id="aggregateGrid" dataContainer="aggregateDc" width="100%" height="250px"/>
+                <label text="Configure Columns &amp; Filters"/>
+                <vbox id="configBox" width="100%"/>
+            </vbox>
+        </hbox>
+    </vbox>
+</layout>
+</view>
+
+
